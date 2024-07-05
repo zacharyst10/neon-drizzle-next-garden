@@ -3,6 +3,7 @@
 import { todoType } from '@/types/todo-type'
 import { ChangeEvent, FC, useState } from 'react'
 
+import { DeleteModal } from './delete-modal'
 import { Button } from './ui/button'
 
 interface Props {
@@ -57,7 +58,7 @@ const Todo: FC<Props> = ({
 
   // Event handler for deleting a todo item
   const handleDelete = () => {
-    if (confirm('Are you sure you want to delete this todo?')) {
+    {
       deleteTodoItem(todo.id)
     }
   }
@@ -65,14 +66,12 @@ const Todo: FC<Props> = ({
   // Rendering the Todo component
   return (
     <div className='flex items-center gap-2 rounded-full border border-solid border-gray-200 p-4'>
-      {/* Checkbox for marking the todo as done */}
       <input
         type='checkbox'
         className='-sm h-4 w-4 text-blue-200'
         checked={isDone}
         onChange={handleIsDone}
       />
-      {/* Input field for todo text */}
       <input
         type='text'
         value={text}
@@ -82,7 +81,6 @@ const Todo: FC<Props> = ({
           todo.done ? 'line-through' : ''
         } w-full border-gray-200 px-2 py-1 outline-none read-only:border-transparent focus:border`}
       />
-      {/* Action buttons for editing, saving, canceling, and deleting */}
       <div className='ml-auto flex gap-1'>
         {editing ? (
           <Button onClick={handleSave} className='w-14 px-2 py-1'>
@@ -106,13 +104,11 @@ const Todo: FC<Props> = ({
             Close
           </Button>
         ) : (
-          <Button
-            variant='destructive'
-            onClick={handleDelete}
-            className='w-16 px-2 py-1'
-          >
-            Delete
-          </Button>
+          <DeleteModal handleDelete={handleDelete}>
+            <Button variant='destructive' className='w-16 px-2 py-1'>
+              Delete
+            </Button>
+          </DeleteModal>
         )}
       </div>
     </div>
