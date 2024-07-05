@@ -1,6 +1,7 @@
 "use client";
 import { ChangeEvent, FC, useState } from "react";
 import { todoType } from "@/types/todo-type";
+import { Button } from "./ui/button";
 
 interface Props {
   todo: todoType;
@@ -61,11 +62,11 @@ const Todo: FC<Props> = ({
 
   // Rendering the Todo component
   return (
-    <div className="flex items-center gap-2 p-4 border-gray-200 border-solid border rounded-lg">
+    <div className="flex items-center gap-2 p-4 border-gray-200 border-solid border ">
       {/* Checkbox for marking the todo as done */}
       <input
         type="checkbox"
-        className="text-blue-200 rounded-sm h-4 w-4"
+        className="text-blue-200 -sm h-4 w-4"
         checked={isDone}
         onChange={handleIsDone}
       />
@@ -77,36 +78,39 @@ const Todo: FC<Props> = ({
         readOnly={!editing}
         className={`${
           todo.done ? "line-through" : ""
-        } outline-none read-only:border-transparent focus:border border-gray-200 rounded px-2 py-1 w-full`}
+        } outline-none read-only:border-transparent focus:border border-gray-200  px-2 py-1 w-full`}
       />
       {/* Action buttons for editing, saving, canceling, and deleting */}
       <div className="flex gap-1 ml-auto">
         {editing ? (
-          <button onClick={handleSave} className=" rounded px-2 w-14 py-1">
+          <Button onClick={handleSave} className=" px-2 w-14 py-1">
             Save
-          </button>
+          </Button>
         ) : (
-          <button
+          <Button
+            variant="secondary"
             onClick={handleEdit}
-            className="bg-blue-400 text-blue-50 rounded w-14 px-2 py-1"
+            className=" w-14 px-2 py-1"
           >
             Edit
-          </button>
+          </Button>
         )}
         {editing ? (
-          <button
+          <Button
             onClick={handleCancel}
-            className="bg-red-400 w-16 text-red-50 rounded px-2 py-1"
+            variant="destructive"
+            className="w-16  px-2 py-1"
           >
             Close
-          </button>
+          </Button>
         ) : (
-          <button
+          <Button
+            variant="destructive"
             onClick={handleDelete}
-            className="bg-red-400 w-16 text-red-50 rounded px-2 py-1"
+            className=" w-16   px-2 py-1"
           >
             Delete
-          </button>
+          </Button>
         )}
       </div>
     </div>
