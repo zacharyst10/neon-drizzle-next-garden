@@ -6,6 +6,7 @@ import {
   editTodo,
   toggleTodo
 } from '@/actions/todo-actions'
+import { addUser } from '@/actions/user-actions'
 import { todoType } from '@/types/todo-type'
 import { FC, useState } from 'react'
 
@@ -14,17 +15,22 @@ import Todo from './todo'
 
 interface Props {
   todos: todoType[]
+  user: any
 }
 
-const Todos: FC<Props> = ({ todos }) => {
+const Todos: FC<Props> = ({ todos, user }) => {
   // State to manage the list of todo items
   const [todoItems, setTodoItems] = useState<todoType[]>(todos)
 
   // Function to create a new todo item
   const createTodo = (text: string) => {
+    // addUser()
     const id = (todoItems.at(-1)?.id || 0) + 1
-    addTodo(text, id)
-    setTodoItems(prev => [...prev, { id: id, text, done: false }])
+    addTodo(text, id, user?.id)
+    setTodoItems(prev => [
+      ...prev,
+      { id: id, text, done: false, userId: user?.id }
+    ])
   }
 
   // Function to change the text of a todo item

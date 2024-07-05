@@ -1,47 +1,49 @@
-"use server";
-import { eq } from "drizzle-orm";
-import { revalidatePath } from "next/cache";
+'use server'
 
-import db from "@/db/drizzle";
-import { todo } from "@/db/schema";
+import { db } from '@/db/drizzle'
+import { todos } from '@/db/schema'
+import { eq } from 'drizzle-orm'
+import { revalidatePath } from 'next/cache'
 
-export const getData = async () => {
-  const data = await db.select().from(todo);
-  return data;
-};
+export const getData = async (userId: number) => {
+  // const data = await db.select().from(todos)
+  const data = await db.select().from(todos).where(eq(todos?.userId, userId))
+  return data
+}
 
-export const addTodo = async (text: string, id: number) => {
-  await db.insert(todo).values({
+export const addTodo = async (text: string, id: number, userId: number) => {
+  await db.insert(todos).values({
     text: text,
     id: id,
-  });
-  revalidatePath("/");
-};
+    userId: userId
+  })
+  revalidatePath('/')
+}
 
 export const deleteTodo = async (id: number) => {
-  await db.delete(todo).where(eq(todo.id, id));
+  await db.delete(todos).where(eq(todos.id, id))
 
-  revalidatePath("/");
-};
+  revalidatePath('/')
+}
 
 export const toggleTodo = async (id: number, done: boolean) => {
   await db
-    .update(todo)
+    .update(todos)
     .set({
-      done: done,
+      done: done
     })
-    .where(eq(todo.id, id));
+    .where(eq(todos.id, id))
 
-  revalidatePath("/");
-};
+  revalidatePath('/')
+}
 
 export const editTodo = async (id: number, text: string) => {
   await db
-    .update(todo)
+    .update(todos)
     .set({
-      text: text,
+      text: text
     })
-    .where(eq(todo.id, id));
+    .where(eq(todos.id, id))
 
-  revalidatePath("/");
-};
+  revalidatePath('/')
+}
