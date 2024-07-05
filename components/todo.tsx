@@ -82,10 +82,7 @@ const Todo: FC<Props> = ({
       {/* Action buttons for editing, saving, canceling, and deleting */}
       <div className="flex gap-1 ml-auto">
         {editing ? (
-          <button
-            onClick={handleSave}
-            className="bg-green-600 text-green-50 rounded px-2 w-14 py-1"
-          >
+          <button onClick={handleSave} className=" rounded px-2 w-14 py-1">
             Save
           </button>
         ) : (
