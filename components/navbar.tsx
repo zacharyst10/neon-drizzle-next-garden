@@ -17,6 +17,8 @@ import {
   navigationMenuTriggerStyle
 } from '@/components/ui/navigation-menu'
 
+import { Button } from './ui/button'
+
 const components: { title: string; href: string; description: string }[] = [
   {
     title: 'Alert Dialog',
@@ -119,11 +121,21 @@ export function Navbar() {
       </NavigationMenuList>
       <ModeToggle />
       {isSignedIn ? (
-        <UserButton>Sign out</UserButton>
+        <>
+          <Button asChild className='mr-4'>
+            <SignOutButton />
+          </Button>
+          <UserButton />
+        </>
       ) : (
-        <Link href='/sign-in' legacyBehavior passHref>
-          <SignOutButton>Sign in</SignOutButton>
-        </Link>
+        <div className='flex gap-4'>
+          <Button asChild>
+            <Link href='/sign-in'>Sign In</Link>
+          </Button>
+          <Button asChild>
+            <Link href='/sign-up'>Sign Up</Link>
+          </Button>
+        </div>
       )}
     </NavigationMenu>
   )
