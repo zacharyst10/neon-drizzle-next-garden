@@ -18,18 +18,21 @@ export const getUser = async (userId: number) => {
   })
   return user
 }
-
 export const addUser = async (user: any) => {
+  if (!user?.clerkId) {
+    throw new Error('clerkId is required.')
+  }
+
   await db
     .insert(users)
     .values({
-      clerkId: user?.clerkId,
-      email: user?.email,
-      name: user?.name!,
-      firstName: user?.firstName,
-      lastName: user?.lastName,
-      photo: user?.photo
+      clerkId: user.clerkId,
+      email: user.email,
+      name: user.name,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      photo: user.photo
     })
-    .returning({ clerClientId: users?.clerkId })
+    .returning({ clerClientId: users.clerkId })
   // revalidatePath('/')
 }
