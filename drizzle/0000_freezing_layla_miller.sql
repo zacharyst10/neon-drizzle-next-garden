@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS "todos" (
-	"id" integer PRIMARY KEY NOT NULL,
+	"id" bigint PRIMARY KEY NOT NULL,
 	"text" text NOT NULL,
 	"done" boolean DEFAULT false NOT NULL,
 	"user_id" integer NOT NULL
@@ -9,6 +9,10 @@ CREATE TABLE IF NOT EXISTS "users" (
 	"id" serial PRIMARY KEY NOT NULL,
 	"name" text NOT NULL,
 	"email" text NOT NULL,
+	"clerk_id" text NOT NULL,
+	"first_name" text NOT NULL,
+	"last_name" text NOT NULL,
+	"photo" text NOT NULL,
 	"created_at" timestamp DEFAULT now() NOT NULL,
 	"updated_at" timestamp DEFAULT now() NOT NULL
 );

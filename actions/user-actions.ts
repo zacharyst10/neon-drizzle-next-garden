@@ -19,10 +19,17 @@ export const getUser = async (userId: number) => {
   return user
 }
 
-export const addUser = async () => {
-  await db.insert(users).values({
-    name: 'John Doe',
-    email: 'john@doe.com'
-  })
-  revalidatePath('/')
+export const addUser = async (user: any) => {
+  await db
+    .insert(users)
+    .values({
+      clerkId: user?.clerkId,
+      email: user?.email,
+      firstName: user?.firstName,
+      lastName: user?.lastName,
+      photo: user?.photo,
+      name: user?.name
+    })
+    .returning({ clerClientId: users?.clerkId })
+  // revalidatePath('/')
 }
