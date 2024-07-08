@@ -1,5 +1,5 @@
 {
-  "id": "db7db5a2-86f1-409c-886f-a6293e7de929",
+  "id": "b1ce5fad-9810-4886-8e58-6d1a0d48346d",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -75,20 +75,20 @@
           "primaryKey": false,
           "notNull": true
         },
-        "clerk_id": {
-          "name": "clerk_id",
+        "clerkId": {
+          "name": "clerkId",
           "type": "text",
           "primaryKey": false,
           "notNull": true
         },
-        "first_name": {
-          "name": "first_name",
+        "firstName": {
+          "name": "firstName",
           "type": "text",
           "primaryKey": false,
           "notNull": true
         },
-        "last_name": {
-          "name": "last_name",
+        "lastName": {
+          "name": "lastName",
           "type": "text",
           "primaryKey": false,
           "notNull": true
