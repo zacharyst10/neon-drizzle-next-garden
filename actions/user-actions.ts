@@ -25,10 +25,10 @@ export const addUser = async (user: any) => {
     .values({
       clerkId: user?.clerkId,
       email: user?.email,
+      name: user?.name!,
       firstName: user?.firstName,
       lastName: user?.lastName,
-      photo: user?.photo,
-      name: user?.name
+      photo: user?.photo
     })
     .returning({ clerClientId: users?.clerkId })
   // revalidatePath('/')
