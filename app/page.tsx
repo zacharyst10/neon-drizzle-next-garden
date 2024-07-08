@@ -1,20 +1,19 @@
 import { getData } from '@/actions/todo-actions'
 import { getAllUsers, getUser } from '@/actions/user-actions'
+import { currentUser } from '@clerk/nextjs/server'
 
 import Todos from '@/components/todos'
 
 export default async function Home() {
-  // const users = await getAllUsers()
-  // console.log(users)
-  // const data = await getData(users[0].id)
-  // const user = await getUser(users[0].id)
-
-  // console.log(user)
+  const user: any = await currentUser()
+  if (!user) return
+  const fetchedData = await getUser(user?.id)
+  console.log(fetchedData)
 
   return (
     <main className='flex min-h-screen flex-col items-center justify-between p-24'>
       <h1>Garden</h1>
-      {/* <Todos todos={data} user={users[0]} /> */}
+      <Todos todos={fetchedData[0].todos} user={fetchedData[0]} />
     </main>
   )
 }
