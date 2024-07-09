@@ -1,6 +1,6 @@
 'use client'
 
-import { SignOutButton, UserButton, useClerk, useUser } from '@clerk/nextjs'
+import { SignOutButton, UserButton, useUser } from '@clerk/nextjs'
 import Link from 'next/link'
 import * as React from 'react'
 
@@ -57,8 +57,7 @@ const components: { title: string; href: string; description: string }[] = [
 ]
 
 export function Navbar() {
-  const { isSignedIn, user } = useUser()
-  const { signOut } = useClerk()
+  const { isSignedIn } = useUser()
   return (
     <NavigationMenu className='py-5'>
       <NavigationMenuList>

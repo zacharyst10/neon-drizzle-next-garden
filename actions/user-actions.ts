@@ -2,7 +2,6 @@
 
 import { db } from '@/db/drizzle'
 import { users } from '@/db/schema'
-import { revalidatePath } from 'next/cache'
 
 export const getAllUsers = async () => {
   const data = await db.select().from(users)
@@ -34,5 +33,4 @@ export const addUser = async (user: any) => {
       photo: user.photo
     })
     .returning({ clerClientId: users.clerkId })
-  // revalidatePath('/')
 }

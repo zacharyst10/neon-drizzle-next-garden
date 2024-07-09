@@ -1,5 +1,4 @@
-import { getData } from '@/actions/todo-actions'
-import { getAllUsers, getUser } from '@/actions/user-actions'
+import { getUser } from '@/actions/user-actions'
 import { currentUser } from '@clerk/nextjs/server'
 
 import Todos from '@/components/todos'

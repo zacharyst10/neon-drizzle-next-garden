@@ -6,7 +6,6 @@ import {
   editTodo,
   toggleTodo
 } from '@/actions/todo-actions'
-import { addUser } from '@/actions/user-actions'
 import { todoType } from '@/types/todo-type'
 import { FC, useState } from 'react'
 
