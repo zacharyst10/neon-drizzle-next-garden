@@ -7,7 +7,6 @@ export default async function Home() {
   const user: any = await currentUser()
   if (!user) return
   const fetchedData = await getUser(user?.id)
-  console.log(fetchedData)
 
   return (
     <main className='flex min-h-screen flex-col items-center justify-between p-24'>
