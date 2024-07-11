@@ -69,7 +69,7 @@ export function Navbar() {
                 <NavigationMenuLink asChild>
                   <a
                     className='flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md'
-                    href='/encyclopedia'
+                    href='/'
                   >
                     <div className='mb-2 mt-4 text-lg font-medium'>
                       shadcn/ui
@@ -82,7 +82,7 @@ export function Navbar() {
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href='/docs' title='Introduction'>
+              <ListItem href='/encyclopedia' title='Encyclopedia'>
                 Re-usable components built using Radix UI and Tailwind CSS.
               </ListItem>
               <ListItem href='/docs/installation' title='Installation'>
