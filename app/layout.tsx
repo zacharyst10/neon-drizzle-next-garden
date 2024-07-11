@@ -23,7 +23,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang='en'>
         <body
-          className={`${inter.className} mx-auto flex w-full flex-col items-center`}
+          className={`${inter.className} min-h-screen bg-background font-sans antialiased`}
         >
           <ThemeProvider
             attribute='class'

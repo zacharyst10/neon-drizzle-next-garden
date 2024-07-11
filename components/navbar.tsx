@@ -59,7 +59,7 @@ const components: { title: string; href: string; description: string }[] = [
 export function Navbar() {
   const { isSignedIn } = useUser()
   return (
-    <NavigationMenu className='py-5'>
+    <NavigationMenu className='mx-auto w-full py-5'>
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
