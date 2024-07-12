@@ -1,12 +1,10 @@
 'use client'
 
-import { SignOutButton, UserButton, useUser } from '@clerk/nextjs'
 import Link from 'next/link'
 import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 
-import { ModeToggle } from '@/components/toggle-mode'
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -16,8 +14,6 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle
 } from '@/components/ui/navigation-menu'
-
-import { Button } from './ui/button'
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -57,7 +53,6 @@ const components: { title: string; href: string; description: string }[] = [
 ]
 
 export function Navbar() {
-  const { isSignedIn } = useUser()
   return (
     <NavigationMenu className='mx-auto w-full py-5'>
       <NavigationMenuList>
@@ -118,24 +113,6 @@ export function Navbar() {
           </Link>
         </NavigationMenuItem>
       </NavigationMenuList>
-      <ModeToggle />
-      {isSignedIn ? (
-        <>
-          <Button asChild className='mr-4'>
-            <SignOutButton />
-          </Button>
-          <UserButton />
-        </>
-      ) : (
-        <div className='flex gap-4'>
-          <Button asChild>
-            <Link href='/sign-in'>Sign In</Link>
-          </Button>
-          <Button asChild>
-            <Link href='/sign-up'>Sign Up</Link>
-          </Button>
-        </div>
-      )}
     </NavigationMenu>
   )
 }

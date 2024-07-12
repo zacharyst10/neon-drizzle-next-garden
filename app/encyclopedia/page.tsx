@@ -36,17 +36,17 @@ export default function Encyclopedia() {
 
   const carouselItems2 = [
     {
-      title: 'Nightshades',
+      title: 'Tomatoes',
       image:
         'https://images.unsplash.com/photo-1562447575-88db38dcc649?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     },
     {
-      title: 'Brassicas',
+      title: 'Peppers',
       image:
         'https://images.unsplash.com/photo-1562447575-88db38dcc649?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     },
     {
-      title: 'Legumes',
+      title: 'Beans',
       image:
         'https://images.unsplash.com/photo-1562447575-88db38dcc649?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     }
