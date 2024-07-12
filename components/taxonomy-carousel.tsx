@@ -10,40 +10,15 @@ import {
   CarouselPrevious
 } from '@/components/ui/carousel'
 
-const carouselItems = [
-  {
-    title: 'Nightshades',
-    image:
-      'https://images.unsplash.com/photo-1562447575-88db38dcc649?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-  },
-  {
-    title: 'Brassicas',
-    image:
-      'https://images.unsplash.com/photo-1562447575-88db38dcc649?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-  },
-  {
-    title: 'Legumes',
-    image:
-      'https://images.unsplash.com/photo-1562447575-88db38dcc649?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-  },
-  {
-    title: 'Cucurbits',
-    image:
-      'https://images.unsplash.com/photo-1562447575-88db38dcc649?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-  },
-  {
-    title: 'Umbellifers',
-    image:
-      'https://images.unsplash.com/photo-1562447575-88db38dcc649?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-  },
-  {
-    title: 'Asters',
-    image:
-      'https://images.unsplash.com/photo-1562447575-88db38dcc649?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-  }
-]
+interface carouselItem {
+  title: string
+  image: string
+}
 
-export default function TaxonomyCarousel() {
+interface carouselProps {
+  carouselItems: carouselItem[]
+}
+export default function TaxonomyCarousel({ carouselItems }: carouselProps) {
   return (
     <Carousel
       opts={{
@@ -53,13 +28,13 @@ export default function TaxonomyCarousel() {
     >
       <CarouselContent>
         {carouselItems.map((item, index) => (
-          <CarouselItem key={index} className='md:basis-1/2 lg:basis-1/3'>
-            <Card className='rounded-full p-0'>
+          <CarouselItem key={index} className='md:basis-1/2 lg:basis-1/5'>
+            <Card className='h-48 w-48 rounded-full p-0'>
               <CardContent className='rounded-full p-0'>
                 <Image
                   src={item.image}
                   alt={item.title}
-                  className='h-full w-full rounded-full object-cover'
+                  className='h-48 w-48 rounded-full object-cover'
                   width={150}
                   height={100}
                   quality={100}
