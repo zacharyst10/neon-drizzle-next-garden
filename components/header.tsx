@@ -15,7 +15,13 @@ export default function Header() {
   return (
     <div className='flex items-center justify-between p-5'>
       <Link href='/'>
-        <Image src={logo} alt='logo' width={50} height={50} />
+        <Image
+          src={logo}
+          alt='logo'
+          width={50}
+          height={50}
+          placeholder='blur'
+        />
       </Link>
       <Navbar />
       <ModeToggle />
