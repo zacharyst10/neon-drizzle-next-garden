@@ -1,4 +1,8 @@
+import Image from 'next/image'
+
 import TaxonomyCarousel from '@/components/taxonomy-carousel'
+
+import avacadoTwo from '@/public/icons/avacado2.png'
 
 export default function Encyclopedia() {
   const carouselItems = [
@@ -56,6 +60,13 @@ export default function Encyclopedia() {
     <div className='container'>
       <h1>Encyclopedia</h1>
       <h1>Taxonomic Groups</h1>
+      <Image
+        src={avacadoTwo}
+        alt='avacado'
+        placeholder='blur'
+        width={100}
+        height={100}
+      />
       <TaxonomyCarousel carouselItems={carouselItems} />
       <TaxonomyCarousel carouselItems={carouselItems2} />
     </div>
