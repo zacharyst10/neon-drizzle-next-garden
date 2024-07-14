@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
 import Header from '@/components/header'
-import { Navbar } from '@/components/navbar'
 import { ThemeProvider } from '@/components/theme-provider'
 
 import './globals.css'
