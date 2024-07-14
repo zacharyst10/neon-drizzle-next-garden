@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import * as React from 'react'
 
 import { cn } from '@/lib/utils'
@@ -11,8 +10,7 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle
+  NavigationMenuTrigger
 } from '@/components/ui/navigation-menu'
 
 const components: { title: string; href: string; description: string }[] = [
@@ -57,7 +55,7 @@ export function Navbar() {
     <NavigationMenu className='mx-auto w-full py-5'>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Learn</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className='grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]'>
               <li className='row-span-3'>
@@ -90,7 +88,7 @@ export function Navbar() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Grow</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className='grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]'>
               {components.map(component => (
@@ -104,13 +102,6 @@ export function Navbar() {
               ))}
             </ul>
           </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href='/docs' legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Documentation
-            </NavigationMenuLink>
-          </Link>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
