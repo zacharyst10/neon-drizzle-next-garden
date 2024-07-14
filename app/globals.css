@@ -57,3 +57,81 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.loader {
+  position: relative;
+  width: var(--size, 100px);
+  height: var(--size, 100px);
+}
+
+.loader::before {
+  content: '';
+  display: block;
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-size: 200% 200%;
+  background-image: linear-gradient(
+    45deg,
+    #ffb6c1,
+    /* Light pink */ #ffa7a7,
+    /* Soft red */ #ffdab9,
+    /* Peach puff */ #fff0b2,
+    /* Light golden */ #d1ffb3,
+    /* Light green */ #b2e0ff,
+    /* Light sky blue */ #c6a1e6,
+    /* Light purple */ #f9a8b4,
+    /* Salmon pink */ #f9cce1
+  );
+  animation:
+    spin 3s linear infinite,
+    rainbow 1s ease alternate infinite;
+  z-index: 1;
+}
+
+.loader::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+
+  background-color: white;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.seed {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25%;
+  height: auto;
+  z-index: 3;
+}
