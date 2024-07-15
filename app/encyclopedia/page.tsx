@@ -4,7 +4,7 @@ import TaxonomyCarousel from '@/components/taxonomy-carousel'
 
 import avacadoTwo from '@/public/icons/avacado2.png'
 
-export default function Encyclopedia() {
+export default async function Encyclopedia() {
   const carouselItems = [
     {
       title: 'Nightshades',
