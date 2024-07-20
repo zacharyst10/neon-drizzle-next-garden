@@ -10,7 +10,7 @@ export default async function Home() {
 
   return (
     <main className='flex min-h-screen flex-col items-center justify-between p-24'>
-      <h1>Garden</h1>
+      <h1>Garden Site</h1>
       <Todos todos={fetchedData[0].todos} user={fetchedData[0]} />
     </main>
   )
