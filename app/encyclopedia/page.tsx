@@ -65,6 +65,33 @@ export default async function Encyclopedia() {
         'https://images.unsplash.com/photo-1708661073403-65a5c1fc001b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     }
   ]
+  const carouselItems3 = [
+    {
+      title: 'Tomatoes',
+      image:
+        'https://images.unsplash.com/photo-1562447575-88db38dcc649?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    },
+    {
+      title: 'Peppers',
+      image:
+        'https://images.unsplash.com/photo-1663500004095-a7482241694c?q=80&w=3474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    },
+    {
+      title: 'Beans',
+      image:
+        'https://images.unsplash.com/photo-1638890770156-48a18d5c2dba?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    },
+    {
+      title: 'herbs',
+      image:
+        'https://images.unsplash.com/photo-1508595165502-3e2652e5a405?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    },
+    {
+      title: 'Leafy Greens',
+      image:
+        'https://images.unsplash.com/photo-1708661073403-65a5c1fc001b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    }
+  ]
 
   return (
     <div className='container'>
