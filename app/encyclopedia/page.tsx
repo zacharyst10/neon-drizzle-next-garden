@@ -106,6 +106,7 @@ export default async function Encyclopedia() {
       />
       <TaxonomyCarousel carouselItems={carouselItems} />
       <TaxonomyCarousel carouselItems={carouselItems2} />
+      <TaxonomyCarousel carouselItems={carouselItems3} />
     </div>
   )
 }
